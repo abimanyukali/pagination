@@ -1,7 +1,9 @@
 import styles from "./styles.module.css";
 
-const Genre = ({ genres, filterGenre, setFilterGenre }) => {
+const Genre = ({ genres, filterGenre, setFilterGenre,setPage,}) => {
 	const onChange = ({ currentTarget: input }) => {
+		setPage(1)
+		
 		if (input.checked) {
 			const state = [...filterGenre, input.value];
 			setFilterGenre(state);
@@ -22,8 +24,10 @@ const Genre = ({ genres, filterGenre, setFilterGenre }) => {
 							type="checkbox"
 							value={genre}
 							onChange={onChange}
+							id={genre}
+
 						/>
-						<p className={styles.genre_label}>{genre}</p>
+						<label className={styles.genre_label} htmlFor={genre}>{genre}</label>
 					</div>
 				))}
 			</div>

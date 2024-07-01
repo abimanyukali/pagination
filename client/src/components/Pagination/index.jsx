@@ -3,7 +3,8 @@ import styles from "./styles.module.css";
 const Pagination = ({ page, total, limit, setPage }) => {
 	const totalPages = Math.ceil(total / limit);
 
-	const onClick = (newPage) => {
+
+	const handleClick = (newPage) => {
 		setPage(newPage + 1);
 	};
 
@@ -12,7 +13,7 @@ const Pagination = ({ page, total, limit, setPage }) => {
 			{totalPages > 0 &&
 				[...Array(totalPages)].map((val, index) => (
 					<button
-						onClick={() => onClick(index)}
+						onClick={() => handleClick(index)}
 						className={
 							page === index + 1
 								? `${styles.page_btn} ${styles.active}`

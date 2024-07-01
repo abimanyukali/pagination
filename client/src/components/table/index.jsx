@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 
 const Table = ({ movies }) => {
-  console.log(movies);
+
   return (
     <div className={styles.container}>
       <div className={styles.heading}>
@@ -21,6 +21,7 @@ const Table = ({ movies }) => {
 							<p key={genre} className={styles.movie_genre}>
 								{genre}
 								{index !== movie.genre.length - 1 && "/"}
+								
 							</p>
 						))}
 					</div>
